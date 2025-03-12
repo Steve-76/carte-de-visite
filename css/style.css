@@ -1,0 +1,249 @@
+/* Réinitialisation du navigateur */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styles généraux */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: white;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 72vh;
+  align-items: center;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 20px;
+  color: #ffda79;
+  text-align: center;
+}
+
+h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+/* Animation */
+.animation-bg {
+  width: 100%;
+  height: 100vh;
+  background: url("../icons/bg-mobile.gif") repeat-x;
+  background-size: cover;
+  animation: scrollBackground 100s linear infinite;
+}
+
+@keyframes scrollBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -2208px 0;
+  }
+}
+
+.block {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header.block {
+  animation-delay: 0.5s;
+}
+
+nav.block {
+  animation-delay: 1s;
+}
+
+nav ul li:nth-child(1) {
+  animation-delay: 1.5s;
+}
+
+nav ul li:nth-child(2) {
+  animation-delay: 2s;
+}
+
+nav ul li:nth-child(3) {
+  animation-delay: 2.5s;
+}
+
+nav ul li:nth-child(4) {
+  animation-delay: 3s;
+}
+
+section.block {
+  animation-delay: 3.5s;
+}
+
+/* Main */
+/* Header */
+header {
+  display: flex;
+  justify-content: space-evenly;
+}
+.left-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+header img {
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+header img:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(80px);
+}
+
+.title {
+  margin-top: 8px;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul i:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(80px);
+}
+nav i {
+  color: white;
+  font-size: 50px;
+  padding: 20px;
+}
+
+/* Section */
+section {
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+section:hover {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(50px);
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+section li {
+  text-align: center;
+  list-style: none;
+  margin-bottom: 5px;
+}
+
+/* Footer */
+footer {
+  padding-bottom: 15px;
+  position: fixed;
+  bottom: 0;
+  color: white;
+  text-align: center;
+}
+
+/* Display */
+@media screen and (max-height: 430px) {
+  main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 75vh;
+    align-items: center;
+  }
+
+  i:hover {
+    transform: scale(1.2);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+  }
+  .left-container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+  }
+  section {
+    width: auto;
+  }
+  footer {
+    padding-bottom: 2px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .animation-bg {
+    width: 100%;
+    height: 100vh;
+    background: url("../icons/bg.gif") repeat-x;
+    background-size: cover;
+    animation: scrollBackground 120s linear infinite;
+  }
+  main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    height: 60vh;
+    align-items: center;
+  }
+
+  i:hover {
+    transform: scale(1.2);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+  }
+  header {
+    display: block;
+    text-align: center;
+  }
+  .left-container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+  }
+  section {
+    width: auto;
+  }
+}
